@@ -1,20 +1,20 @@
 # RuinedIsUnfertilized
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 
 Fertilized eggs that gets ruined by temperature will now change to being unfertilized eggs instead.
 
 This will of course only happen if there is an unfertilized egg type, as most wild egg-laying animals do not have that defined.
 	
-![Image](https://i.imgur.com/pgjQLXV.png)
+![Image](https://i.imgur.com/O0IIlYj.png)
 
 Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my https://store.steampowered.com/wishlist/id/Mlie]Wishlist or buy me a cup of tea.
 
 https://ko-fi.com/G2G55DDYD]![Image](https://i.ibb.co/VWJJb3w/Support-Me-dark-2x.png)
 
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 

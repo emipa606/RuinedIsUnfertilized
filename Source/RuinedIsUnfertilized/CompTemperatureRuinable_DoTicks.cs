@@ -14,7 +14,12 @@ namespace RuinedIsUnfertilized
                 return;
             }
 
-            var parentDef = __instance.parent.def;
+            var parentDef = __instance?.parent?.def;
+
+            if (parentDef == null)
+            {
+                return;
+            }
 
             if (RuinedIsUnfertilized.ignoredEggs.Contains(parentDef))
             {
@@ -25,8 +30,13 @@ namespace RuinedIsUnfertilized
                 }
             }
 
-            var hatcher = parentDef?.GetCompProperties<CompProperties_Hatcher>().hatcherPawn;
-            var unfertilizedEggDef = hatcher?.race.GetCompProperties<CompProperties_EggLayer>().eggUnfertilizedDef;
+            var hatcher = parentDef.GetCompProperties<CompProperties_Hatcher>()?.hatcherPawn;
+            if (hatcher == null)
+            {
+                return;
+            }
+
+            var unfertilizedEggDef = hatcher.race?.GetCompProperties<CompProperties_EggLayer>()?.eggUnfertilizedDef;
             if (unfertilizedEggDef == null)
             {
                 RuinedIsUnfertilized.ignoredEggs.Add(parentDef);

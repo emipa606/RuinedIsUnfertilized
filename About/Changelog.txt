@@ -1,4 +1,7 @@
 # Changelog for RuinedIsUnfertilized
 
+1.0.1.0 - Should now handle ruined content of fermenting barrels
+
+
 1.0.0.0 - First publish
 
