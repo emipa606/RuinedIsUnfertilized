@@ -5,7 +5,7 @@ using Verse;
 namespace RuinedIsUnfertilized;
 
 [HarmonyPatch(typeof(CompTemperatureRuinable), "DoTicks")]
-public class CompTemperatureRuinable_DoTicks
+public static class CompTemperatureRuinable_DoTicks
 {
     public static void Postfix(ref CompTemperatureRuinable __instance, float ___ruinedPercent)
     {
@@ -21,11 +21,18 @@ public class CompTemperatureRuinable_DoTicks
             return;
         }
 
-        if (RuinedIsUnfertilized.ignoredEggs.Contains(parentDef))
+        var egg = __instance.parent;
+        if (RuinedIsUnfertilized.ignoredEggs.Contains(egg))
+        {
+            return;
+        }
+
+        if (RuinedIsUnfertilized.ignoredEggTypes.Contains(parentDef))
         {
             if (parentDef.thingCategories?.Any(def => def == RuinedIsUnfertilized.fertilizedEggsCategoryDef) ==
                 false)
             {
+                RuinedIsUnfertilized.ignoredEggs.Add(egg);
                 return;
             }
         }
@@ -33,13 +40,15 @@ public class CompTemperatureRuinable_DoTicks
         var hatcher = parentDef.GetCompProperties<CompProperties_Hatcher>()?.hatcherPawn;
         if (hatcher == null)
         {
+            RuinedIsUnfertilized.ignoredEggs.Add(egg);
             return;
         }
 
         var unfertilizedEggDef = hatcher.race?.GetCompProperties<CompProperties_EggLayer>()?.eggUnfertilizedDef;
         if (unfertilizedEggDef == null)
         {
-            RuinedIsUnfertilized.ignoredEggs.Add(parentDef);
+            RuinedIsUnfertilized.ignoredEggTypes.Add(parentDef);
+            RuinedIsUnfertilized.ignoredEggs.Add(egg);
             return;
         }
 
@@ -50,7 +59,7 @@ public class CompTemperatureRuinable_DoTicks
         var thing = ThingMaker.MakeThing(unfertilizedEggDef);
         thing.stackCount = count;
         GenSpawn.Spawn(thing, location, map);
-
+        RuinedIsUnfertilized.ignoredEggs.Add(thing);
         //Log.Message($"{parentDef.label} was ruined by temperature and replaced with {unfertilizedEggDef.label}");
     }
 }

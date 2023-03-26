@@ -1,5 +1,8 @@
 # Changelog for RuinedIsUnfertilized
 
+1.4.2 - Now caches eggs as well as egg-types. Should preform better in maps with a lot of eggs.
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests
 
 
