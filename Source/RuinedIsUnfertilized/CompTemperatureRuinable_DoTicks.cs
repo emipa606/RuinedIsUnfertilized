@@ -47,9 +47,21 @@ public static class CompTemperatureRuinable_DoTicks
         var unfertilizedEggDef = hatcher.race?.GetCompProperties<CompProperties_EggLayer>()?.eggUnfertilizedDef;
         if (unfertilizedEggDef == null)
         {
-            RuinedIsUnfertilized.ignoredEggTypes.Add(parentDef);
-            RuinedIsUnfertilized.ignoredEggs.Add(egg);
-            return;
+            if (!egg.def.defName.Contains("Fertilized"))
+            {
+                RuinedIsUnfertilized.ignoredEggTypes.Add(parentDef);
+                RuinedIsUnfertilized.ignoredEggs.Add(egg);
+                return;
+            }
+
+            unfertilizedEggDef =
+                DefDatabase<ThingDef>.GetNamedSilentFail(egg.def.defName.Replace("Fertilized", "Unfertilized"));
+            if (unfertilizedEggDef == null)
+            {
+                RuinedIsUnfertilized.ignoredEggTypes.Add(parentDef);
+                RuinedIsUnfertilized.ignoredEggs.Add(egg);
+                return;
+            }
         }
 
         var location = __instance.parent.Position;

@@ -1,5 +1,8 @@
 # Changelog for RuinedIsUnfertilized
 
+1.4.3 - Should now work with eggs that is not defined as the unfertilized type for that egg-layer by the mod-author but still uses a similar defname, Vanilla Animals Expanded for example
+
+
 1.4.2 - Now caches eggs as well as egg-types. Should preform better in maps with a lot of eggs.
 
 
