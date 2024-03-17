@@ -1,5 +1,8 @@
 # Changelog for RuinedIsUnfertilized
 
+1.5.0 - Mod updated for 1.5 and passed autotests
+
+
 1.4.3 - Should now work with eggs that is not defined as the unfertilized type for that egg-layer by the mod-author but still uses a similar defname, Vanilla Animals Expanded for example
 
 

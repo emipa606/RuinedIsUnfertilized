@@ -15,8 +15,8 @@ public class RuinedIsUnfertilized
     static RuinedIsUnfertilized()
     {
         fertilizedEggsCategoryDef = ThingCategoryDef.Named("EggsFertilized");
-        ignoredEggTypes = new List<ThingDef>();
-        ignoredEggs = new List<Thing>();
+        ignoredEggTypes = [];
+        ignoredEggs = [];
         var harmony = new Harmony("Mlie.RuinedIsUnfertilized");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
