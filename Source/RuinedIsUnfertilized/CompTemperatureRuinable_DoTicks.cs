@@ -65,7 +65,13 @@ public static class CompTemperatureRuinable_DoTicks
         }
 
         var location = __instance.parent.Position;
-        var map = __instance.parent.MapHeld;
+        var map = __instance.parent.Map;
+        if (map == null)
+        {
+            map = __instance.parent.MapHeld;
+            location = __instance.parent.PositionHeld;
+        }
+
         if (map == null)
         {
             Log.WarningOnce($"[RuinedIsUnfertilized]: Failed to spawn egg for {__instance.parent}",
