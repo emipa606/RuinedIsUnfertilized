@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TabulaRasa.UpdateDef Abstract="true" Name="RuinedIsUnfertilized_UpdateInfoBase">
+		<linkUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2555349961</linkUrl>
+		<banner>UpdateInfo/RuinedIsUnfertilized</banner>
+	</TabulaRasa.UpdateDef>
+	<TabulaRasa.UpdateDef ParentName="RuinedIsUnfertilized_UpdateInfoBase">
+		<defName>RuinedIsUnfertilized_1_5_2</defName>
+		<date>2025/6/11</date>
+		<content>The features of this mod has now been included in the game. This mod will not be further updated but will stay up to support the previous versions of the game.</content>
+	</TabulaRasa.UpdateDef>
+</Defs>
+
